@@ -5,5 +5,5 @@
   #### Excellence of the solution will be based on the vote given by the contributors.
   
   
-  ![alt text](http://url/to/img.png)
+  ![alt text](https://github.com/baisabhishek1109/P-S/blob/master/process.jpg)
   
