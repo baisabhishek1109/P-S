@@ -25,11 +25,11 @@
 					right  = 2*i+1;\
 					temp = i;\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx2870\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf2 \shad\shadx0\shady60\shadr6\shado56 \shadc0 						if arr[temp] < arr[left]\
+\cf2 \shad\shadx0\shady60\shadr6\shado56 \shadc0 						if arr[temp] < arr[left]:\
 							temp = left;\
-						if arr[temp] > arr[right]\
+						if arr[temp] > arr[right]:\
 							temp = right;\
-						if temp != i\
+						if temp != i:\
 							t = arr[temp]\
 							arr[temp] = arr[left]\
 							arr[left] = t\
@@ -37,6 +37,36 @@
 \
 time complexity = O(logn)\
 		where n is the size of input.\
+\
+\
+			Build Max Heap:\
+					\
+					Max_Heap():\
+						for(item in arr):\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx2870\tx3401\tx3601\tx3968\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 							arr.push(item);	\
+							heapify(1)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx2870\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 \
+time complexity : O(n)\
+		\
+\
+		 Heap_Sort():\
+			Max_Heap();\
+			for i = arr.size; i > 2 ; i - -:\
+\pard\tx566\tx1133\tx2267\tx2768\tx2870\tx3166\tx3246\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 			last = arr[i];\
+			item = arr[1];\
+			arr[1] = last;\
+			print(\'91deleted item is \'91+item);\
+\
+time complexity = O(n) #for the Max_Heap + O(nlogn) #for loop inside which hepify method is called\
+so total is  = O(nlogn) \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx2870\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 			\
+								\
+\
+\
 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf2 \shad\shadx0\shady60\shadr6\shado56 \shadc0 			\
