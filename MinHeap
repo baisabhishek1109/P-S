@@ -1,0 +1,85 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+
+namespace MinHeap
+{
+    class Program
+    {   
+        
+        static List<int> array = new List<int>();
+        static int temp = 0;
+
+        static void Main(string[] args)
+        {
+            Hashtable ht = new Hashtable();
+            ht.Add(2,"hussain");
+
+            
+
+            for (int i = 0; i < 10; i++)
+            {                
+                Add(Convert.ToInt32(Console.ReadLine()));
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                Removemin(temp);
+            }
+
+            Console.ReadLine();
+            
+        }
+
+        private static void Removemin(int temp)
+        {            
+            array[temp] = array[array.Count - 1];
+            array.RemoveAt(array.Count - 1);
+            HeapifyDown();            
+        }
+
+        private static void HeapifyDown()
+        {
+            int i = 0;
+            while (i < array.Count - 1)
+            {
+                if (i * 2 + 2 >= array.Count)
+                {
+                    break;
+                }
+                int comparer = array[i * 2 + 1] > array[i * 2 + 2] ? i * 2 + 2 : i * 2 + 1;
+                if (array[comparer] < array[i])
+                    swap(comparer,i);
+                i = comparer;
+            }
+        }
+
+        private static void Add(int a)
+        {
+            array.Add(a);
+            Heapify();
+        }
+
+        private static void Heapify()
+        {
+            for (int i = array.Count-1; i > 0; i=Math.Abs((i-1)/2))
+            {                
+                int temp = Math.Abs((i - 1) / 2);
+                if (array[i] < array[temp])
+                    {
+                        swap(i, Math.Abs((i - 1) / 2));
+                    }
+                if (i == 0)
+                    return;
+                
+            }
+        }
+
+        private static void swap(int a, int b)
+        {
+            array[a] = array[a] + array[b];
+            array[b] = array[a] - array[b];
+            array[a] = array[a] - array[b];
+        }
+    }
+}
