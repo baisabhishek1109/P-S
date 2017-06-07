@@ -1,0 +1,19 @@
+Public Node LCA(node root,node p, node q){
+
+    //checking for null
+    if(root==null) return null;
+    
+    //if the node is found
+    if(root==p||root==q) return root;
+    
+    //storing the node while travelling back in recursion.
+    node left = LCA(root.left,p,q);
+    node right = LCA(root.right,p,q);
+    
+    //when both the nodes has been found out 
+    if((left==p&&right==q)||(left==q&&right==p))
+      return root;
+    
+    //when either of the node has been found in the recursion method.
+    return (left!=null):left?right;
+}
