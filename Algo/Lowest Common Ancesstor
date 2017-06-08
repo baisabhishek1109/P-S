@@ -1,3 +1,14 @@
+//node structure
+class node {
+    int data;
+    node left, right;
+ 
+    node(int value) {
+        data = value;
+        left = right = null;
+    }
+}
+
 Public Node LCA(node root,node p, node q){
 
     //checking for null
@@ -17,3 +28,21 @@ Public Node LCA(node root,node p, node q){
     //when either of the node has been found in the recursion method.
     return (left!=null):left?right;
 }
+
+//Comlpexity is O(n).
+
+
+//sample tree and output
+
+        _______3______
+       /              \
+    ___5__          ___1__
+   /      \        /      \
+   6      _2       0       8
+         /  \
+         7   4
+         
+         
+         
+LCA for node 7 and 8 is 3.
+LCA for node 6 and 4 is 5.
